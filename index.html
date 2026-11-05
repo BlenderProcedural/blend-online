@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blend Online for Blender</title>
+<meta name="description" content="Blend Online: edit one Blender scene together in real time over the internet, with voice and text chat. Join with one invite code.">
+<meta property="og:title" content="Blend Online for Blender">
+<meta property="og:description" content="Two artists. One scene. Live. Edit one Blender scene together in real time.">
+<meta property="og:image" content="images/cover.jpg">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.hero { padding: 48px 0 40px; background: radial-gradient(ellipse 80% 70% at 50% 0%, #1b2943 0%, var(--bg) 70%); }
+.hero .brand { margin-bottom: 24px; }
+.tagline { font-size: clamp(30px, 4.6vw, 50px); font-weight: 800; letter-spacing: -.035em; line-height: 1.08; margin: 0 0 18px; color: var(--text); }
+.lead { font-size: clamp(18px, 2.2vw, 21px); color: #d0d7e6; max-width: 800px; margin-bottom: 22px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+.chip { padding: 7px 16px; border-radius: 999px; background: rgba(90,167,255,.1); border: 1px solid rgba(90,167,255,.38); color: #d3e2fb; font-weight: 600; font-size: 15px; }
+.spec .card { text-align: center; padding: 20px 14px; }
+.spec b { display: block; font-size: 19px; margin-bottom: 4px; }
+.cta { text-align: center; }
+.not { columns: 2; column-gap: 30px; }
+.not li { break-inside: avoid; }
+@media (max-width: 820px) { .not { columns: 1; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><img class="logo" src="images/logo.svg" alt=""><h1>Blend Online</h1></div>
+    <p class="tagline">Two artists. One scene. <span class="grad">Live.</span></p>
+    <p class="lead">Edit the same Blender scene with someone else at the same time, over the internet. Send one invite code, then model, shade and animate together, and talk while you do it, without leaving Blender.</p>
+    <div class="chips">
+      <span class="chip">Real-time scene sync</span>
+      <span class="chip">Live Edit Mode</span>
+      <span class="chip">Geometry Nodes &amp; shaders</span>
+      <span class="chip">Voice &amp; text chat</span>
+      <span class="chip">One invite code</span>
+    </div>
+    <div class="media">
+      <video src="media/promo.mp4" poster="images/cover.jpg" controls playsinline preload="none"></video>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Getting started</div>
+    <h2>One invite code. <span class="grad">That's it.</span></h2>
+    <p>Host a session, copy the invite and send it in any chat app. The other person pastes it and joins. There is no server to set up and no port to forward.</p>
+    <div class="grid3" style="margin-top:22px">
+      <figure><div class="media"><img src="images/win_host.jpg" alt="The Session tab with the Host a Session button" loading="lazy"></div><figcaption><b>1. Host a session</b>Your current scene is shared.</figcaption></figure>
+      <figure><div class="media"><img src="images/win_invite.jpg" alt="The People tab with the Copy Invite button" loading="lazy"></div><figcaption><b>2. Copy the invite</b>Send it in any chat app.</figcaption></figure>
+      <figure><div class="media"><img src="images/win_join.jpg" alt="The Session tab with Join with the copied invite code" loading="lazy"></div><figcaption><b>3. Paste it and join</b>The scene opens as a new scene.</figcaption></figure>
+    </div>
+    <p class="note" style="margin-top:22px">Invite code connections are direct and encrypted, and work through most home and office routers. When both sides are behind a strict (symmetric) NAT, use the included relay server script or a VPN. <a href="docs.html#connect">More in the docs</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="txt">
+      <div class="kicker">Presence</div>
+      <h2>See who works <span class="grad">on what</span></h2>
+      <p>Move, rotate, scale, add, duplicate, delete: everyone sees it right away. You always know where the others are.</p>
+      <ul class="ticks">
+        <li>Each person's selection as a colored box with their name</li>
+        <li>A marker where each person is looking</li>
+        <li>What everyone is doing, in the People tab</li>
+        <li>Transforms update while the other person is still dragging</li>
+      </ul>
+    </div>
+    <div class="media"><video src="media/presence.mp4" poster="images/poster_presence.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split rev">
+    <div class="txt">
+      <div class="kicker">Modeling</div>
+      <h2>Live <span class="grad">Edit Mode</span></h2>
+      <p>You don't have to leave Edit Mode for the others to see your work. The mesh is shared after every operation.</p>
+      <ul class="ticks">
+        <li>Extrude, scale, subdivide: it shows up on the other side as you go</li>
+        <li>UVs included</li>
+        <li>Sculpt Mode works the same way</li>
+        <li>Two people on one mesh? Both get a clear warning</li>
+      </ul>
+    </div>
+    <div class="media"><video src="media/edit.mp4" poster="images/poster_edit.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Nodes</div>
+    <h2>Geometry Nodes and shaders. <span class="grad">Both ways.</span></h2>
+    <p>Whole node trees stay in sync, not just their results. Change a value on your side and the other person's viewport follows.</p>
+    <div class="grid2" style="margin-top:22px">
+      <figure><div class="media"><video src="media/nodes.mp4" poster="images/poster_nodes.jpg" autoplay muted loop playsinline preload="metadata"></video></div><figcaption><b>Geometry Nodes</b>Alex grows and twists the tower. Sam's tower follows.</figcaption></figure>
+      <figure><div class="media"><video src="media/shader.mp4" poster="images/poster_shader.jpg" autoplay muted loop playsinline preload="metadata"></video></div><figcaption><b>Shaders</b>Sam changes the Color Ramp. Alex sees it right away.</figcaption></figure>
+    </div>
+    <ul class="ticks" style="margin-top:22px">
+      <li>Nodes, links, values, color ramps and curve mappings</li>
+      <li>Node groups and repeat zones</li>
+      <li>The layout too: node positions, collapsed nodes, hidden sockets and node colors</li>
+      <li>Two people editing one tree at once are merged node by node</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">What stays in sync</div>
+    <h2>Your whole scene, <span class="grad">live</span></h2>
+    <div class="grid3" style="margin-top:24px">
+      <div class="card"><h3>Objects</h3><p>Add, delete, duplicate, rename, parent, hide, move between collections. Meshes, curves, text, empties, lights, cameras.</p></div>
+      <div class="card"><h3>Meshes</h3><p>Geometry and UVs, live even inside Edit Mode and Sculpt Mode.</p></div>
+      <div class="card"><h3>Curves and text</h3><p>Bezier, NURBS, poly and text objects with their settings.</p></div>
+      <div class="card"><h3>Materials</h3><p>Whole node trees, color ramps and shader node groups.</p></div>
+      <div class="card"><h3>Textures</h3><p>Image files travel with the scene, in the background, so large ones don't hold up your edits.</p></div>
+      <div class="card"><h3>World and render</h3><p>World nodes, render engine, resolution, frame range, color management and samples.</p></div>
+      <div class="card"><h3>Modifiers</h3><p>Every modifier type, with settings and Geometry Nodes inputs.</p></div>
+      <div class="card"><h3>Constraints and collections</h3><p>Constraint settings and targets, nested collections and their flags.</p></div>
+      <div class="card"><h3>Animation</h3><p>Keyframes, interpolation, F-Curve modifiers and timeline markers. See everyone's current frame on the timeline.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="txt">
+      <div class="kicker">Voice chat</div>
+      <h2>Talk while <span class="grad">you build</span></h2>
+      <p>Voice chat is built in. No third app, no extra call. Green rings and level bars show who is talking.</p>
+      <ul class="ticks">
+        <li>Your microphone opens only when you click Join Voice Chat</li>
+        <li>Talk when you speak, or use push to talk (<kbd>Mouse Button 4</kbd>)</li>
+        <li>Mute yourself, turn voices off, or mute one person</li>
+        <li>Works next to the scene sync without slowing it down</li>
+      </ul>
+      <p class="note warn">Voice chat runs on Windows and Linux. It is not available on macOS, because Blender has no microphone permission there.</p>
+    </div>
+    <div class="media"><video src="media/voice.mp4" poster="images/poster_voice.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Working together</div>
+    <h2>Talk, point, <span class="grad">follow</span></h2>
+    <div class="grid3" style="margin-top:22px">
+      <figure><div class="media"><video src="media/chat.mp4" poster="images/poster_chat.jpg" autoplay muted loop playsinline preload="metadata"></video></div><figcaption><b>Text chat</b>Right next to the work. Object names in messages are links that select and frame the object.</figcaption></figure>
+      <figure><div class="media"><video src="media/draw.mp4" poster="images/poster_draw.jpg" autoplay muted loop playsinline preload="metadata"></video></div><figcaption><b>Draw, note, mark, ping</b>Drawings and notes stay on the scene until removed. Ping a spot with <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd>.</figcaption></figure>
+      <figure><div class="media"><video src="media/follow.mp4" poster="images/poster_follow.jpg" autoplay muted loop playsinline preload="metadata"></video></div><figcaption><b>Follow any view</b>Jump to someone's view once, or follow their view and timeline frame.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The host's controls</div>
+    <h2>You decide <span class="grad">who does what</span></h2>
+    <div class="grid3" style="margin-top:22px">
+      <div class="card"><h3>Viewers and editors</h3><p>Viewers can look, chat, talk and mark, but they can't change the scene. Change anyone's role at any time.</p></div>
+      <div class="card"><h3>Ask before letting in</h3><p>Turn it on and each person waits until you let them in. Remove people from the session when you need to.</p></div>
+      <div class="card"><h3>Your other scenes stay yours</h3><p>The shared scene opens as a new scene in your file. Your other scenes are not changed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Compatibility</div>
+    <h2>Requirements</h2>
+    <div class="grid4 spec" style="margin-top:22px">
+      <div class="card"><b>Blender 4.2+</b><span class="muted">tested on 4.5 LTS and 5.2, also connected to each other</span></div>
+      <div class="card"><b>Windows · Linux · macOS</b><span class="muted">pure Python, one zip. Voice: Windows and Linux</span></div>
+      <div class="card"><b>Everyone needs it</b><span class="muted">each person in a session needs the add-on installed</span></div>
+      <div class="card"><b>Internet access</b><span class="muted">Allow Online Access must be on in Blender's preferences</span></div>
+    </div>
+    <h3 style="margin-top:32px">Not shared yet</h3>
+    <p>So you know before you buy:</p>
+    <ul class="ticks not">
+      <li>Armatures and poses</li>
+      <li>Grease Pencil, metaballs, surfaces, volumes and other object types</li>
+      <li>Shape keys</li>
+      <li>NLA strips and drivers</li>
+      <li>Animation of materials, worlds and node trees</li>
+      <li>Movies, image sequences and UDIM tiles</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Edit one Blender scene <span class="grad">together, live.</span></h2>
+    <p>Read the <a href="docs.html">documentation</a> for every feature and setting.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><a href="docs.html">Documentation</a> · Blend Online for Blender · GPL-3.0-or-later</div>
+</footer>
+
+<script src="assets/embed.js"></script>
+</body>
+</html>

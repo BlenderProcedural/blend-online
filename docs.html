@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blend Online Docs</title>
+<meta name="description" content="Documentation for the Blend Online Blender add-on: installation, hosting and joining, what is shared, people and roles, chat, voice, markings, preferences, the relay server and troubleshooting.">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+body { font-size: 16.5px; line-height: 1.65; }
+.wrap { max-width: 960px; }
+header { padding: 40px 0 30px; background: radial-gradient(ellipse 80% 90% at 50% 0%, #1b2943 0%, var(--bg) 75%); }
+.brand .logo { width: 68px; height: 50px; }
+.brand h1 { font-size: clamp(28px, 4.5vw, 42px); line-height: 1.1; }
+.brand small { display: block; font-size: 15px; color: var(--muted); font-weight: 400; letter-spacing: 0; margin-top: 4px; }
+section { padding: 34px 0; }
+h2 { font-size: 28px; }
+h2 .n { color: var(--accent); margin-right: 8px; }
+h3 { font-size: 19px; margin: 24px 0 8px; }
+p { margin: 0 0 12px; }
+ol, ul { margin: 0 0 12px; padding-left: 22px; color: var(--soft); }
+li { margin-bottom: 6px; }
+.toc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 22px; margin-top: 26px; padding: 18px 22px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+.toc a { color: #cfd6e4; text-decoration: none; font-size: 15px; }
+.toc a:hover { color: var(--accent2); }
+.toc a span { color: var(--accent); margin-right: 6px; font-weight: 700; }
+.tbl-wrap { overflow-x: auto; margin: 14px 0 16px; border: 1px solid var(--line); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--soft); }
+tr:last-child td { border-bottom: 0; }
+th { background: #141b29; color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .8px; }
+td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+.shot { border-radius: 12px; border: 1px solid var(--line); margin: 16px 0; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.two > * { min-width: 0; }
+.two .shot { margin: 0; }
+.narrow { max-width: 420px; }
+details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin-bottom: 10px; }
+summary { cursor: pointer; font-weight: 600; color: var(--text); }
+details p, details ul { margin: 10px 0 2px; }
+footer { padding: 28px 0 44px; }
+@media (max-width: 760px) {
+  .toc { grid-template-columns: 1fr 1fr; }
+  .two { grid-template-columns: 1fr; }
+  td:first-child { white-space: normal; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><img class="logo" src="images/logo.svg" alt=""><h1>Blend Online <span class="grad">Docs</span><small>Version 0.9.1 · Blender 4.2 and newer</small></h1></div>
+    <nav class="toc">
+      <a href="#install"><span>1</span>Installation</a>
+      <a href="#quick"><span>2</span>Quick start</a>
+      <a href="#where"><span>3</span>Where to find it</a>
+      <a href="#host"><span>4</span>Hosting a session</a>
+      <a href="#join"><span>5</span>Joining a session</a>
+      <a href="#connect"><span>6</span>When it doesn't connect</a>
+      <a href="#shared"><span>7</span>What is shared</a>
+      <a href="#people"><span>8</span>People and roles</a>
+      <a href="#chat"><span>9</span>Chat</a>
+      <a href="#voice"><span>10</span>Voice chat</a>
+      <a href="#marks"><span>11</span>Markings and pings</a>
+      <a href="#anim"><span>12</span>Timeline</a>
+      <a href="#prefs"><span>13</span>Preferences</a>
+      <a href="#relay"><span>14</span>Relay server</a>
+      <a href="#privacy"><span>15</span>Network and privacy</a>
+      <a href="#faq"><span>16</span>Troubleshooting</a>
+    </nav>
+  </div>
+</header>
+
+<section id="install">
+  <div class="wrap">
+    <h2><span class="n">1</span>Installation</h2>
+    <ol>
+      <li>In Blender, open <b>Edit &gt; Preferences &gt; Get Extensions</b>.</li>
+      <li>Open the drop-down at the top right and choose <b>Install from Disk</b>, then pick the zip. You can also drag the zip into Blender.</li>
+      <li>Open <b>Edit &gt; Preferences &gt; System &gt; Network</b> and turn on <b>Allow Online Access</b>. The add-on can't connect without it, and tells you so.</li>
+    </ol>
+    <p>Everyone in a session needs the add-on installed. Different Blender versions can work together: 4.5 and 5.2 are tested connected to each other.</p>
+  </div>
+</section>
+
+<section id="quick">
+  <div class="wrap">
+    <h2><span class="n">2</span>Quick start</h2>
+    <ol>
+      <li><b>Host:</b> open the Blend Online window and click <b>Host a Session</b>, then <b>Start Hosting</b> in the dialog.</li>
+      <li>In the <b>People</b> tab, click <b>Copy Invite</b> and send the code in any chat app.</li>
+      <li><b>The other person:</b> copies the code, opens the Blend Online window and clicks <b>Join with the copied invite code</b>.</li>
+      <li>Work together. <b>Join Voice Chat</b> in the Voice tab if you want to talk.</li>
+    </ol>
+    <img class="shot" src="images/store_invite.jpg" alt="Host a session, copy the invite, paste it and join" loading="lazy">
+  </div>
+</section>
+
+<section id="where">
+  <div class="wrap">
+    <h2><span class="n">3</span>Where to find it</h2>
+    <ul>
+      <li><b>The Blend Online window</b> floats in the largest 3D Viewport of every workspace. Drag its title to move it (it docks left or right), drag the corner to resize it, or collapse it to a small pill with everyone's avatars and an unread badge. Clicks on the window never reach your scene.</li>
+      <li><b>The top bar button</b> is in every workspace, also those without a 3D Viewport. Its popover shows the session, people, markings and a message field, and shows or hides the window.</li>
+      <li><b>The sidebar tab</b> (N panel) is optional. Turn it on with <b>Sidebar Tab</b> in the preferences.</li>
+    </ul>
+    <p>The window has five tabs: <b>Chat</b>, <b>People</b>, <b>Voice</b>, <b>Marks</b> and <b>Session</b>.</p>
+  </div>
+</section>
+
+<section id="host">
+  <div class="wrap">
+    <h2><span class="n">4</span>Hosting a session</h2>
+    <p>Hosting shares your current scene. Click <b>Host a Session</b> in the Session tab. The dialog has these settings:</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Setting</th><th>What it does</th></tr>
+      <tr><td>Port</td><td>The port used on your computer (default 7777).</td></tr>
+      <tr><td>Password</td><td>Optional. Everyone who joins must enter it.</td></tr>
+      <tr><td>Your Name</td><td>The name others see.</td></tr>
+      <tr><td>Allow Internet Joins</td><td>Creates an invite code so people anywhere can join over the internet. No server or router setup is needed.</td></tr>
+    </table></div>
+    <p>Windows may ask you to allow Blender through the firewall. <b>End Session</b> in the Session tab ends it for everyone. Opening another file or disabling the add-on also ends the session cleanly.</p>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap">
+    <h2><span class="n">5</span>Joining a session</h2>
+    <p>With an invite code on your clipboard, the Session tab shows <b>Join with the copied invite code</b>. Otherwise click <b>Join a Session</b> and choose:</p>
+    <ul>
+      <li><b>Invite Code:</b> paste the code the host sent you. It starts with <code>BO-</code>.</li>
+      <li><b>Address:</b> the host's IP address and port on your own network, or the address of a relay server.</li>
+    </ul>
+    <p>The shared scene opens as a new scene in your file. Your other scenes are not changed. <b>Leave Session</b> in the Session tab disconnects you. If the host leaves, the session ends for everyone with a clear message.</p>
+  </div>
+</section>
+
+<section id="connect">
+  <div class="wrap">
+    <h2><span class="n">6</span>When it doesn't connect</h2>
+    <p>With an invite code, the two computers find each other by themselves and connect directly. This works through most routers, including double NAT. If it takes long, try these in order:</p>
+    <ol>
+      <li><b>Reply code.</b> After a while the person joining is offered <b>Copy Reply Code</b>. Send it to the host, who clicks <b>Paste Reply</b> in the People tab.</li>
+      <li><b>Same network?</b> Use <b>Address</b> with the host's local address and port. The hosting dialog shows it.</li>
+      <li><b>Relay server or VPN.</b> Direct connections fail when both sides are behind a strict (symmetric) NAT, which is common on mobile networks. Run the <a href="#relay">relay server</a> on any small server, or use a VPN such as Tailscale and join by address.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="shared">
+  <div class="wrap">
+    <h2><span class="n">7</span>What is shared</h2>
+    <div class="tbl-wrap"><table>
+      <tr><th>What</th><th>Details</th></tr>
+      <tr><td>Objects</td><td>Meshes, curves, text, empties, lights and cameras: add, delete, duplicate, rename, parent, transforms, visibility, collection.</td></tr>
+      <tr><td>Meshes</td><td>Geometry and UVs. Shared after each operation in Edit Mode, and from Sculpt Mode (not with dynamic topology).</td></tr>
+      <tr><td>Curves, text</td><td>Bezier, NURBS, poly and text objects with their settings. Changes from others wait while you edit the same curve.</td></tr>
+      <tr><td>Materials</td><td>Settings and whole node trees: color ramps, curve mappings, shader node groups, node layout.</td></tr>
+      <tr><td>Textures</td><td>Image files are sent in the background and packed into the receiver's file. Up to 64 MB per file; you get a message about larger ones.</td></tr>
+      <tr><td>Modifiers</td><td>Every modifier type with its settings, including Geometry Nodes inputs.</td></tr>
+      <tr><td>Geometry Nodes</td><td>Groups with nodes, links, values, zones and layout. Concurrent edits are merged node by node.</td></tr>
+      <tr><td>Constraints</td><td>Settings and targets. The Armature constraint's target list and bone-only types are not shared.</td></tr>
+      <tr><td>Collections</td><td>The nested tree, with visibility flags and color tags.</td></tr>
+      <tr><td>Animation</td><td>Keys, interpolation, easing, F-Curve modifiers on objects, lights, cameras and curves. Timeline markers.</td></tr>
+      <tr><td>Scene</td><td>World with its nodes, render engine, resolution, FPS, film, motion blur, simplify, frame range, units, color management, samples, active camera.</td></tr>
+    </table></div>
+    <h3>Not shared yet</h3>
+    <ul>
+      <li>Armatures and poses, Grease Pencil, metaballs, surfaces, volumes and other object types</li>
+      <li>Shape keys. Meshes with shape keys are shared when their user leaves Edit Mode.</li>
+      <li>NLA strips and drivers</li>
+      <li>Animation of materials, worlds and node trees</li>
+      <li>Movies, image sequences, UDIM tiles, and unsaved texture painting (shared once the image is saved)</li>
+    </ul>
+    <h3>Good to know</h3>
+    <ul>
+      <li><b>Same object at the same time:</b> the last change wins. When two people edit one mesh in Edit, Sculpt or Paint Mode, both get a warning and an "is editing this too" label, and only the last version survives. Agree who takes what.</li>
+      <li><b>Very large meshes:</b> a mesh that takes too long to read (around 800,000 vertices) is shared when its user leaves the mode, not after each operation. A single mesh of more than about 55 MB of encoded data is not shared, and you get an error line.</li>
+      <li>Nothing is applied or scanned while a render or bake runs, so renders are not disturbed.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="people">
+  <div class="wrap">
+    <h2><span class="n">8</span>People and roles</h2>
+    <div class="two">
+      <img class="shot" src="images/win_people.jpg" alt="The People tab" loading="lazy">
+      <div>
+        <p>The <b>People</b> tab shows everyone and what they work on.</p>
+        <ul>
+          <li><b>Go to</b> jumps to their view once.</li>
+          <li><b>Follow</b> keeps your view on theirs, including their timeline frame. Moving your view stops following.</li>
+          <li><b>···</b> (host only) has <b>Make viewer</b> and <b>Remove</b>.</li>
+        </ul>
+        <p>In the 3D Viewport, each person's selection is a colored box with their name, and a marker shows where they are looking.</p>
+      </div>
+    </div>
+    <h3>Host options</h3>
+    <ul>
+      <li><b>New people join as viewers:</b> viewers can look, chat, talk and mark, but can't change the scene.</li>
+      <li><b>Ask before letting people in:</b> each person waits until you click <b>Let in</b> or <b>Deny</b>.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="chat">
+  <div class="wrap">
+    <h2><span class="n">9</span>Chat</h2>
+    <div class="two">
+      <img class="shot" src="images/win_chat.jpg" alt="The Chat tab with messages" loading="lazy">
+      <div>
+        <p>Type in the <b>Chat</b> tab and press <kbd>Enter</kbd> to send, <kbd>Esc</kbd> to stop typing. <kbd>Ctrl</kbd>+<kbd>C</kbd> and <kbd>Ctrl</kbd>+<kbd>V</kbd> work.</p>
+        <ul>
+          <li>Object names in messages are links that select and frame the object.</li>
+          <li>Messages with your name get an amber outline.</li>
+          <li>New messages also appear briefly in the viewport (<b>Chat in Viewport</b>), with an optional sound (<b>Chat Sound</b>).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="voice">
+  <div class="wrap">
+    <h2><span class="n">10</span>Voice chat</h2>
+    <div class="two">
+      <img class="shot" src="images/win_voice.jpg" alt="The Voice tab" loading="lazy">
+      <div>
+        <p>Open the <b>Voice</b> tab and click <b>Join Voice Chat</b>. The microphone opens only then. Use headphones, otherwise the others hear themselves through your microphone.</p>
+        <div class="tbl-wrap"><table>
+          <tr><th>Control</th><th>What it does</th></tr>
+          <tr><td>Microphone</td><td>Mutes you.</td></tr>
+          <tr><td>Voices</td><td>Turns everyone's voice off for you.</td></tr>
+          <tr><td>Talk</td><td><b>When I speak</b> sends your voice when the meter passes the white line. <b>Push to talk</b> sends it while you hold <kbd>Mouse Button 4</kbd>.</td></tr>
+          <tr><td>Sensitivity</td><td>Lower it if noise gets sent.</td></tr>
+          <tr><td>Voice volume</td><td>How loud the others are.</td></tr>
+          <tr><td>Speaker icon</td><td>Mutes one person, only for you.</td></tr>
+        </table></div>
+        <p>Pick devices in the preferences (<b>Microphone</b>, <b>Speakers</b>).</p>
+        <p class="note warn">Voice chat runs on Windows and Linux (PulseAudio, PipeWire or ALSA). It is not available on macOS: Blender has no microphone permission there, and macOS ends apps that open the microphone without one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="marks">
+  <div class="wrap">
+    <h2><span class="n">11</span>Markings and pings</h2>
+    <img class="shot narrow" src="images/win_marks.jpg" alt="The Marks tab" loading="lazy">
+    <div class="tbl-wrap"><table>
+      <tr><th>Tool</th><th>What it does</th></tr>
+      <tr><td>Draw</td><td>Drag with the left mouse button to draw on the scene. <kbd>Ctrl</kbd>+<kbd>Z</kbd> removes your last line, right-click or <kbd>Esc</kbd> stops drawing.</td></tr>
+      <tr><td>Note</td><td>Pin a note to a spot.</td></tr>
+      <tr><td>Mark</td><td>Put corner brackets and a label on an object.</td></tr>
+      <tr><td>Ping</td><td>A temporary signal at a spot. <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd> pings the point under the mouse.</td></tr>
+    </table></div>
+    <p>Markings stay until they are removed, in their author's color, and people who join later see them too. Use <b>Shown</b> to hide them, <b>Clear Mine</b> or <b>Clear All</b> to remove them.</p>
+    <img class="shot" src="images/scene_draw.jpg" alt="A drawing around an object in the 3D Viewport" loading="lazy">
+  </div>
+</section>
+
+<section id="anim">
+  <div class="wrap">
+    <h2><span class="n">12</span>Timeline</h2>
+    <p>The Timeline, Dope Sheet, Graph Editor and NLA draw a line and a name at every other person's current frame, with an arrow while they play. Following someone also follows their frame and plays along. Each person can stay on their own frame otherwise.</p>
+  </div>
+</section>
+
+<section id="prefs">
+  <div class="wrap">
+    <h2><span class="n">13</span>Preferences</h2>
+    <p><b>Edit &gt; Preferences &gt; Add-ons &gt; Blend Online</b></p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Setting</th><th>What it does</th></tr>
+      <tr><td>Your Name</td><td>The name others see. Empty uses your system user name.</td></tr>
+      <tr><td>Your Colour</td><td>Your color for selections and chat. The server picks another one if it is taken.</td></tr>
+      <tr><td>Host Port</td><td>The port used when you host.</td></tr>
+      <tr><td>Blend Online Window</td><td>Shows the floating window.</td></tr>
+      <tr><td>Sidebar Tab</td><td>Also shows Blend Online in the N panel.</td></tr>
+      <tr><td>Session Bar</td><td>Shows everyone's avatar at the top of the viewport.</td></tr>
+      <tr><td>Chat in Viewport</td><td>Shows new messages briefly at the bottom of the viewport. <b>Message Time</b> sets how long.</td></tr>
+      <tr><td>Chat Sound</td><td>Plays a short tone when a message arrives.</td></tr>
+      <tr><td>Connect Automatically</td><td>With an invite code, the person joining needs no reply code. See <a href="#privacy">Network and privacy</a>. Turn off to always exchange reply codes by hand.</td></tr>
+      <tr><td>Ask Before Letting People In</td><td>When you host, each person waits until you let them in.</td></tr>
+      <tr><td>Talk, Sensitivity, Volume</td><td>The defaults of the Voice tab.</td></tr>
+      <tr><td>Microphone, Speakers</td><td>Which audio devices voice chat uses.</td></tr>
+      <tr><td>Updates per Second</td><td>How often your changes are sent. Higher is smoother but uses more bandwidth.</td></tr>
+    </table></div>
+    <p>Change the shortcuts in <b>Preferences &gt; Keymap</b>: <b>Ping</b> (3D View) and <b>Push to Talk</b> (Window).</p>
+  </div>
+</section>
+
+<section id="relay">
+  <div class="wrap">
+    <h2><span class="n">14</span>Relay server</h2>
+    <p>A relay is the same session server without Blender. Everyone connects out to it, so nobody needs direct connections. Use it when direct connections fail.</p>
+    <ol>
+      <li>In the add-on preferences, click <b>Export Relay Server Script</b>. It saves <code>blend_online_server.py</code>.</li>
+      <li>Run it on a machine everyone can reach, with Python 3.8 or newer and nothing else: <br><code>python3 blend_online_server.py --port 7777 --password YOUR_PASSWORD</code></li>
+      <li>Everyone clicks <b>Join a Session</b>, chooses <b>Address</b>, and enters the server's address, port and password.</li>
+    </ol>
+    <p>The first person to join shares their current scene. People who join later receive it.</p>
+    <p class="note warn">Address and relay connections are not encrypted. The password only controls who can join. Use a VPN for confidential work on those. Invite code connections are encrypted.</p>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <h2><span class="n">15</span>Network and privacy</h2>
+    <p>Your scene goes directly from computer to computer. It is not stored on any server of ours: there are none. To find each other over the internet, invite code connections use public services:</p>
+    <ul>
+      <li><b>STUN servers</b> tell each computer its public address.</li>
+      <li><b>ntfy servers</b> (ntfy.sh, ntfy.envs.net) pass the joiner's reply code to the host, encrypted. They see an encrypted message and the two IP addresses.</li>
+      <li><b>The public BitTorrent DHT</b> is a second way to find each other. Only your public address is shared, under a key only invite holders know.</li>
+    </ul>
+    <p>Turn <b>Connect Automatically</b> off to stop using ntfy and the DHT, for example on networks where BitTorrent traffic is not allowed. You then exchange reply codes by hand. Everyone with your invite code can join, so send it only to people you want in the session.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2><span class="n">16</span>Troubleshooting</h2>
+    <details><summary>"Online access is off"</summary><p>Turn on <b>Allow Online Access</b> in <b>Edit &gt; Preferences &gt; System &gt; Network</b>.</p></details>
+    <details><summary>Joining takes long or never connects</summary><p>Follow <a href="#connect">When it doesn't connect</a>. Check that Windows allows Blender through the firewall.</p></details>
+    <details><summary>Someone can't join: version message</summary><p>Everyone needs a compatible version of the add-on. Update to the same version.</p></details>
+    <details><summary>"No sound from your microphone"</summary><p>Check <b>Windows Settings &gt; Privacy &gt; Microphone</b> (desktop apps), or choose another microphone in the preferences.</p></details>
+    <details><summary>The others hear an echo</summary><p>Use headphones. Without them, your microphone picks up their voices from your speakers.</p></details>
+    <details><summary>Noise opens my microphone</summary><p>Set <b>Microphone Sensitivity</b> lower, or use <b>Push to talk</b>.</p></details>
+    <details><summary>A change didn't arrive</summary><p>Check <a href="#shared">What is shared</a>. A viewer's changes are put back, and changes from others wait while a tool is running.</p></details>
+    <details><summary>I can't find the window</summary><p>It lives in the largest 3D Viewport of each workspace. Use the Blend Online button in the top bar to show it.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><a href="index.html">Product page</a> · Blend Online for Blender · GPL-3.0-or-later</div>
+</footer>
+
+<script src="assets/embed.js"></script>
+</body>
+</html>
